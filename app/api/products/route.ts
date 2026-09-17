@@ -50,7 +50,7 @@ export async function POST(request: Request) {
       INSERT INTO products
         (name,  selling_price, stock, supplier_id)
       VALUES
-        ($1, $2, $3, $4, $5)
+        ($1, $2, $3, $4)
       RETURNING *
       `,
       [
