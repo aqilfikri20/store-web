@@ -33,7 +33,6 @@ export async function POST(request: Request) {
 
     const {
       name,
-      purchase_price,
       selling_price,
       stock,
       supplier_id,
@@ -49,14 +48,13 @@ export async function POST(request: Request) {
     const result = await pool.query(
       `
       INSERT INTO products
-        (name, purchase_price, selling_price, stock, supplier_id)
+        (name,  selling_price, stock, supplier_id)
       VALUES
         ($1, $2, $3, $4, $5)
       RETURNING *
       `,
       [
         name,
-        purchase_price,
         selling_price,
         stock,
         supplier_id,
