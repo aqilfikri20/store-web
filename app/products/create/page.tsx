@@ -18,7 +18,6 @@ export default function CreateProductPage() {
 
   const [form, setForm] = useState({
     name: "",
-    purchase_price: "",
     selling_price: "",
     stock: "",
     supplier_id: "",
@@ -61,9 +60,6 @@ export default function CreateProductPage() {
         },
         body: JSON.stringify({
           name: form.name,
-          purchase_price: Number(
-            form.purchase_price
-          ),
           selling_price: Number(
             form.selling_price
           ),
@@ -134,24 +130,7 @@ export default function CreateProductPage() {
             />
           </div>
 
-          {/* Purchase Price */}
-          <div>
-            <label className="mb-2 block text-sm font-medium">
-              Purchase Price
-            </label>
-
-            <input
-              type="number"
-              name="purchase_price"
-              value={form.purchase_price}
-              onChange={handleChange}
-              placeholder="5000000"
-              min="0"
-              required
-              className="w-full rounded-lg border px-4 py-2.5 text-sm outline-none focus:border-black"
-            />
-          </div>
-
+ 
           {/* Selling Price */}
           <div>
             <label className="mb-2 block text-sm font-medium">
